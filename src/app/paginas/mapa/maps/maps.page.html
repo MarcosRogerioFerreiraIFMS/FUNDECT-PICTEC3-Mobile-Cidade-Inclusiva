@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container-mapa">
+    <capacitor-google-map #map></capacitor-google-map>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>
+

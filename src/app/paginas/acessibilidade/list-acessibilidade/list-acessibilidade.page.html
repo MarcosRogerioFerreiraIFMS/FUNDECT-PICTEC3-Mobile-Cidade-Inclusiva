@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Tela Principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="title">
+      <img src="assets/dashboard/icon-cadeira.png">
+      <h2>Acessibilidade Urbana</h2>
+    </div>
+    <p>Locais acessíveis na cidade para você usufruir com amigos e familiares</p>
+
+    <ion-searchbar placeholder="Pesquise um local"></ion-searchbar>
+
+    <div class="content_list">
+      <ion-list>
+        <ion-item *ngFor="let local of locais"
+            routerLink='/perfil-acessibilidade/{{local.id}}'>
+
+          <ion-thumbnail slot="start">
+            <img src={{local.foto}} alt="">
+          </ion-thumbnail>
+
+          <div class="card_content_description">
+            <div class="titulo">
+              {{local.nome}}
+            </div>
+            <div class="description">
+              <ion-icon slot="start" name="newspaper"></ion-icon>
+              {{local.categoria}}<span style="margin-right: 15px;"></span>
+              <ion-icon slot="start" name="call"></ion-icon>
+              {{local.telefone}}
+            </div>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+              {{local.like}} pessoas gostaram
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

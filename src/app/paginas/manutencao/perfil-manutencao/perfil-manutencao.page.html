@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Voltar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+
+    <app-swiper
+      [fotos]=oficina.album
+      [caminhoFoto]=caminhoFoto>
+    </app-swiper>
+
+    <div class="card-perfil">
+      <ion-label class="titulo">{{oficina.nome}}</ion-label>
+
+      <div class="card-especialidade">
+        <ion-label>Especialidades</ion-label>
+        <div class="especialidades" *ngFor="let especialidade of oficina.especialidade">
+          <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+          {{especialidade.descricao}}
+        </div>
+      </div>
+      <div class="card_content_description">
+        <div class="description">
+          <ion-icon slot="start" name="call"></ion-icon>
+          {{oficina.telefone}}
+        </div>
+        <div class="description">
+          <ion-icon slot="start" name="at-circle"></ion-icon>
+          {{oficina.email}}
+        </div>
+        <div class="description">
+          <ion-icon slot="start" name="location-sharp"></ion-icon>
+          {{oficina.rua}}, {{oficina.numero}}. {{oficina.bairro}}, {{oficina.cidade}}/{{oficina.estado}}
+        </div>
+        <div class="join">
+          <app-rating [leitura]="true"></app-rating>
+          {{oficina.like}} pessoas gostaram
+        </div>
+      </div>
+    </div>
+
+    <!-- COMENTÁRIOS -->
+    <ion-button expand="block" (click)="comentar()">Comentar</ion-button>
+
+    <div class="comentarios">
+      <ion-label>Comentários</ion-label>
+      <ion-list>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <div>
+            <ion-label class="user">João Pedro Alves</ion-label>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+            </div>
+            <ion-label class="comment">Lorem ipsum dolor sit et coctetur. Arcu amet blandit coodo dictum. Augue malesuada ntum metu. Arcu amet blandit coodo dictum. Augue malesuada ntum metu.</ion-label>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <div>
+            <ion-label class="user">Roseli Santos</ion-label>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+            </div>
+            <ion-label class="comment">Lorem ipsum dolor sit et coctetur. Arcu amet blandit coodo dictum.</ion-label>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </div>
+</ion-content>

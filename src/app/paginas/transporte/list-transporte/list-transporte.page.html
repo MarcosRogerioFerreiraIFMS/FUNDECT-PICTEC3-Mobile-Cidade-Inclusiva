@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Tela Principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="title">
+      <img src="assets/dashboard/icon-onibus.png">
+      <h2>Transporte Urbano</h2>
+    </div>
+    <p>Lista de profissionais de transporte urbano parceiros dos cadeirantes</p>
+
+    <ion-searchbar placeholder="Pesquise por um Motorista"></ion-searchbar>
+
+    <div class="content_list">
+      <ion-list>
+        <ion-item *ngFor="let motorista of motoristas"
+          routerLink='/perfil-transporte/{{motorista.id}}'>
+          <ion-avatar slot="start">
+            <img src={{caminhoFoto}}{{motorista.foto}} />
+          </ion-avatar>
+          <div class="contatos">
+            <div class="contatos_titulo">
+              {{motorista.nome}}
+            </div>
+            <div class="contatos_info">
+              <ion-icon slot="start" name="call"></ion-icon>
+              {{motorista.telefone}}<span></span>
+              <ion-icon slot="start" name="car"></ion-icon>
+              Carro: {{motorista.veiculo.modelo}}
+            </div>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

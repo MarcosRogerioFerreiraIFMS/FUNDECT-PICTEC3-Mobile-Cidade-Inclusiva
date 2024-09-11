@@ -1,0 +1,70 @@
+
+.card-perfil {
+
+  .titulo {
+    font-size: 18px;
+  }
+
+  .card-especialidade {
+    font-size: 16px;
+    padding-top: 8px;
+    border-bottom: 1px solid #202020;
+
+    .especialidades {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      padding-top: 3px;
+      padding-bottom: 3px;
+
+      ion-icon {
+        font-size: 18px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .card_content_description{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222428;
+    .description {
+      padding-top: 6px;
+      display: flex;
+      align-items: center;
+      ion-icon {
+        font-size: 18px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+}
+
+ion-button {
+  height: 50px;
+  margin-top: 10px;
+  --background: #3A9BFF;
+}
+
+.comentarios {
+  padding-top: 20px;
+  ion-list {
+    background: transparent;
+    ion-item {
+      --background: transparent;
+      padding-top: 12px;
+      .user {
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .comment {
+        font-size: 12px;
+      }
+    }
+  }
+}

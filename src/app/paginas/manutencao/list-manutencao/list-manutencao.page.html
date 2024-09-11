@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="title">
+      <img src="assets/dashboard/icon-ferramentas.png">
+      <h2>Oficinas</h2>
+    </div>
+    <p>Oficinas que prestam manutenção em cadeiras de rodas</p>
+
+    <ion-searchbar placeholder="Informe o nome da oficina"></ion-searchbar>
+
+    <div class="content_list">
+      <ion-list>
+        <ion-item *ngFor="let oficina of oficinas" (click)="perfil()">
+          <div class="item_list">
+            <ion-label>{{oficina.nome}}</ion-label>
+            <div class="card_content">
+              <div class="card_content_image">
+                <img src={{oficina.foto}} alt="">
+              </div>
+
+              <div class="card_content_description">
+                <div class="description">
+                  <ion-icon slot="start" name="call"></ion-icon>
+                  {{oficina.telefone}}
+                </div>
+                <div class="description">
+                  <ion-icon slot="start" name="at-circle"></ion-icon>
+                  {{oficina.email}}
+                </div>
+                <div class="description">
+                  <ion-icon slot="start" name="location-sharp"></ion-icon>
+                  {{oficina.rua}}, {{oficina.numero}}. {{oficina.bairro}}, {{oficina.cidade}}/{{oficina.estado}}
+                </div>
+                <div class="join">
+                  <app-rating [leitura]="true"></app-rating>
+                  {{oficina.like}} pessoas gostaram
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
+    <ion-fab-button (click)="addOficinas()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

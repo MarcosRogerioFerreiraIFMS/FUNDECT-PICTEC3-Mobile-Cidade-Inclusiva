@@ -1,0 +1,40 @@
+ion-header {
+  ion-toolbar {
+    --background: #28A555;
+  }
+}
+
+
+.card_report {
+  background: #FFF;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222428;
+  ion-label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .report_position {
+    display: flex;
+    vertical-align: center;
+    margin-top: 5px;
+
+    .report_icon {
+      color: #222428;
+      font-size: 38px;
+    }
+  }
+  .position_description {
+    font-size: 14px;
+    font-weight: 100;
+
+    .position {
+      ion-label{
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}

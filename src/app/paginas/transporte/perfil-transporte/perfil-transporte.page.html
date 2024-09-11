@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Voltar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="card-perfil">
+      <app-swiper [fotos]=motorista.veiculo.fotos [caminhoFoto]=caminhoFoto></app-swiper>
+      <ion-label class="titulo">{{motorista.nome}}</ion-label>
+      <div class="description">
+        <ion-icon slot="start" name="call"></ion-icon>
+        {{motorista.telefone}}<span></span>
+        <ion-icon slot="start" name="mail"></ion-icon>
+        {{motorista.email}}
+      </div>
+      <div class="join join-perfil">
+        <app-rating [leitura]="true"></app-rating>
+      </div>
+      <ion-icon slot="start" name="car"></ion-icon><span></span>
+      <ion-label class="title-description">Informações do Veículo</ion-label>
+      <div class="description">
+        <ion-label class="titulo_info">Modelo:</ion-label><ion-label>{{motorista.veiculo.modelo}}</ion-label>
+      </div>
+      <div class="description">
+        <ion-label class="titulo_info">Marca:</ion-label><ion-label>{{motorista.veiculo.marca}}</ion-label>
+      </div>
+      <div class="description">
+        <ion-label class="titulo_info">Placa:</ion-label><ion-label>{{motorista.veiculo.placa}}</ion-label>
+      </div>
+    </div>
+
+    <!-- COMENTÁRIOS -->
+    <ion-button expand="block" (click)="comentar()">Comentar</ion-button>
+    <div class="comentarios">
+      <ion-label>Comentários</ion-label>
+      <ion-list>
+        <ion-item *ngFor="let comentario of motorista.comentario">
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src='/assets/usuarios/{{comentario.usuario.foto}}' />
+          </ion-avatar>
+          <div>
+            <ion-label class="user">{{comentario.usuario.nome}}</ion-label>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+            </div>
+            <ion-label class="comment">{{comentario.comentario}}</ion-label>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

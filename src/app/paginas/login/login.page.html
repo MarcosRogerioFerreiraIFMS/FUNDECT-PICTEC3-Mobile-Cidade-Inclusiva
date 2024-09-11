@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="page-bg-light"></div>
+  <div class="page-bg-green"></div>
+
+  <div class="card-login">
+
+    <div class="logo_principal">
+      <img src="assets/login/logo_acessibilidade.png">
+      <div class="titulo">
+        CIDADE INCLUSIVA
+      </div>
+      <div class="sub_titulo">
+        Aplicativo para facilitar na mobilidade urbana de cadeirantes.
+      </div>
+    </div>
+
+    <div class="login">Login</div>
+    <ion-input type="text" label="E-mail" label-placement="stacked" fill="outline"
+               placeholder="Informe seu e-mail" >
+      <ion-icon slot="start" name="person" aria-hidden="true"></ion-icon>
+    </ion-input>
+    <ion-input type="password" label="Senha" label-placement="stacked" fill="outline"
+               placeholder="Informe sua senha" >
+      <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+    </ion-input>
+    <div class="lembrete">Esqueceu a senha?</div>
+
+    <ion-button class="buttonDefault" expand="block" (click)="acessar()">Acessar</ion-button>
+    <ion-button class="buttonOutline" expand="block">Registrar</ion-button>
+  </div>
+</ion-content>

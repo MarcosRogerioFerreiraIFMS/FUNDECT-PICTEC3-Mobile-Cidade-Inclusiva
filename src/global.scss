@@ -1,0 +1,232 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Fontes */
+@import "./theme/fonts.scss";
+
+* {
+  font-family: Gilroy;
+}
+
+/* BACKGROUND - LOGIN E DASHBOARD */
+.page-bg-green {
+  height: 577px;
+  width: 343px;
+  background: #28A555;
+  transform: rotate(41.29deg);
+  border-radius: 50%;
+  margin-left: -130px;
+  margin-top: -160px;
+}
+
+.page-bg-light {
+  height: 577px;
+  width: 343px;
+  background: #F4F5F8;
+  position: absolute;
+  left: -100px;
+  top: -160px;
+  transform: rotate(41.29deg);
+  border-radius: 50%;
+}
+
+/* CONTAINER GERAL PARA TODAS AS PÁGINAS */
+.content_main {
+  padding: 10px;
+  color: #222428;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* BOTÃO GERAL */
+ion-button {
+  height: 50px;
+  margin-top: 10px;
+  //--background: #3A9BFF;
+}
+
+.buttonDefault {
+  --color: #FFFFFF;
+  --background: #3A9BFF;
+}
+
+.buttonOutline {
+  --color: #3A9BFF;
+  --border-color: #3A9BFF;
+  --border-style: solid;
+  --border-width: 2px;
+  --background: #FFFFFF;
+}
+
+/* CONTAINER - PERFIL */
+/* Formatação Padrão */
+.content_main {
+  .card-perfil {
+    background: #FFF;
+
+    padding: 10px;
+    font-size: 14px;
+
+    color: #222428;
+
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    .titulo {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .description, .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 300;
+
+      ion-icon {
+        font-size: 14px;
+        padding-right: 5px;
+      }
+      padding-top: 4px;
+    }
+
+  }
+
+  .comentarios {
+    padding-top: 20px;
+    ion-list {
+      background: transparent;
+      ion-item {
+        --background: transparent;
+        padding-top: 12px;
+        .user {
+          font-weight: 700;
+          font-size: 12px;
+        }
+        .comment {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+/* CONTAINER - LISTA (ITEM) */
+/* Paginas que contem listas de dados */
+.content_main {
+  /* CABEÇALHO DA LISTAGEM*/
+  .title {
+    display: flex;
+    align-items: baseline;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+
+    h2 {
+      font-weight: 700;
+      padding-left: 15px;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -10px;
+  }
+
+  .content_list {
+    ion-list {
+      background: #F5F6F9;
+      padding: 8px;
+
+      ion-item {
+        margin-top: 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .item_list {
+    background: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    color: #222428;
+
+    .card_content {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+  }
+}
+
+
+/* ESTRELAS - Apresentação */
+.join {
+  font-size: 12px;
+  font-weight: 300;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  app-rating {
+    margin-left: -15px;
+  }
+}
+
+ion-content {
+  --background: #F5F6F9;
+}
+
+ion-toolbar {
+  --background: #3a9bff;
+  color: #FFF;
+
+  padding-left: 20px;
+
+  ion-icon {
+    font-size: 30px;
+  }
+}
+
+ion-tabs {
+  ion-tab-bar {
+    --background: #3a9bff;
+    ion-icon {
+      color: #FFF;
+    }
+    ion-label {
+      color: #FFF;
+    }
+  }
+}

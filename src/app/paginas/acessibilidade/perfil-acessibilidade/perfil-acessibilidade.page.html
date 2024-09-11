@@ -1,0 +1,109 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Voltar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+
+    <div class="card-perfil">
+      <app-swiper [fotos]=local.album [caminhoFoto]=caminhoFoto></app-swiper>
+      <ion-label class="titulo">{{local.nome}}</ion-label>
+
+      <div class="description">
+        <ion-icon slot="start" name="location-sharp"></ion-icon>
+        {{local.rua}}, {{local.numero}}. {{local.bairro}}, {{local.cidade.nome}}/{{local.cidade.estado}}
+      </div>
+      <div class="join join-perfil">
+        <app-rating [leitura]="true"></app-rating>
+      </div>
+      <ion-label class="title-description">Informações do local</ion-label>
+      <div class="description">
+        <ion-grid>
+          <ion-row class="titulo_info">
+            <ion-col size="4">Categoria</ion-col>
+            <ion-col size="4">Telefone</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <div class="info">
+                <ion-icon slot="start" name="bed"></ion-icon>{{local.categoria}}
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="info">
+                <ion-icon slot="start" name="call"></ion-icon>{{local.telefone}}
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="titulo_info">
+            <ion-col size="8">E-mail</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="8">
+              <div class="info">
+                <ion-icon slot="start" name="mail"></ion-icon>{{local.email}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <ion-label class="title-description">Recursos de Acessibilidade</ion-label>
+      <div class="description">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="auto" *ngFor="let item of local.recursos">
+              <div>
+                <img class="recursos" src="/assets/acessibilidade/simbolos/{{item.acessibilidade.toLowerCase()}}.jpg">
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <!-- COMENTÁRIOS -->
+    <ion-button expand="block" (click)="comentar()">Comentar</ion-button>
+
+    <div class="comentarios">
+      <ion-label>Comentários</ion-label>
+      <ion-list>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="/assets/usuarios/usuario02.png" />
+          </ion-avatar>
+          <div>
+            <ion-label class="user">João Pedro Alves</ion-label>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+            </div>
+            <ion-label class="comment">Lorem ipsum dolor sit et coctetur. Arcu amet blandit coodo dictum. Augue malesuada ntum metu. Arcu amet blandit coodo dictum. Augue malesuada ntum metu.</ion-label>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="/assets/usuarios/usuario01.png" />
+          </ion-avatar>
+          <div>
+            <ion-label class="user">Roseli Santos</ion-label>
+            <div class="join">
+              <app-rating [leitura]="true"></app-rating>
+            </div>
+            <ion-label class="comment">Lorem ipsum dolor sit et coctetur. Arcu amet blandit coodo dictum.</ion-label>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "cidade-inclusiva-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,9 @@
+<swiper-container
+  navigation="true"
+  pagination="true"
+  pagination-clickable="true">
+  <swiper-slide *ngFor="let foto of fotos">
+    <img src={{caminhoFoto}}{{foto.foto}}>
+  </swiper-slide>
+</swiper-container>
+

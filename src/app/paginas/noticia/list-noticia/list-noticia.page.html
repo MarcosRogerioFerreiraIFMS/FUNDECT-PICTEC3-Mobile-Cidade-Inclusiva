@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="title">
+      <img src="assets/dashboard/icon-jornal.png">
+      <h2>Notícias</h2>
+    </div>
+    <p>Principais notícias e oportunidades</p>
+    <ion-searchbar placeholder="Pesquise por uma notícia"></ion-searchbar>
+
+    <div class="content_list">
+    <ion-list>
+      <ion-item *ngFor="let noticia of noticias"  routerLink='/perfil-noticia/{{noticia.id}}'>
+        <div class="item_list">
+          <div class="card_content">
+            <div class="card_content_image">
+              <img src='/assets/noticia/{{noticia.foto}}' alt="">
+            </div>
+            <div class="card_content_description">
+              <div class="description titulo">
+                {{noticia.titulo}}
+              </div>
+              <div class="description">
+                <ion-icon slot="start" name="newspaper"></ion-icon>
+                {{noticia.tipoNoticia}}
+                <ion-icon slot="start" name="calendar-number" class="data"></ion-icon>
+                {{noticia.data}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

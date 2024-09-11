@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Lista de Oficinas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="title">
+      <img src="assets/dashboard/icon-ferramentas.png">
+      <h2>Oficinas</h2>
+    </div>
+    <p>Cadastre uma nova Oficina</p>
+
+    <form>
+      <ion-label class="titulo">Infomações do local</ion-label>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Rua</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Numero</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Bairro</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Logo</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Fotos</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-label class="titulo">Especialidades</ion-label>
+      <ion-list>
+        <ion-item>
+          <ion-select
+            [compareWith]="compareWith"
+            placeholder="Selecione a especialidade"
+            (ionChange)="handleChange($event)"
+            [multiple]="true"
+          >
+            <ion-select-option *ngFor="let especialidade of especialidades" [value]="especialidade">{{ especialidade.descricao }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <!--<ion-item lines="none">
+          <ion-label>Current value: {{ especialidade | json }}</ion-label>
+        </ion-item>-->
+      </ion-list>
+
+      <ion-button class="buttonDefault" expand="block" type="submit">
+        Salvar
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

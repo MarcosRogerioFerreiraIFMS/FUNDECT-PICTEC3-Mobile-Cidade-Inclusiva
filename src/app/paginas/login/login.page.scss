@@ -1,0 +1,60 @@
+ion-content::part(background) {
+  background: #3A9BFF;
+}
+
+.card-login {
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  height: 100%px;
+  width: 95%;
+  position: absolute;
+  top: 177px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.logo_principal {
+  text-align: center;
+  color: #383A3E;
+
+  img {
+    width: 80px;
+    padding-top: 20px;
+  }
+
+  .titulo {
+    font-weight: 700;
+  }
+
+  .sub_titulo {
+    font-weight: 500;
+  }
+}
+
+.login {
+  font-size: 20px;
+  font-weight: 700;
+  color: #383A3E;
+  margin-top: 30px;
+}
+
+ion-input {
+  margin-top: 15px;
+}
+
+.lembrete {
+  text-align: right;
+  margin-bottom: 40px;
+  color: #383A3E;
+  margin-top: 10px;
+}
+
+.buttonDefault, .buttonOutline {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+

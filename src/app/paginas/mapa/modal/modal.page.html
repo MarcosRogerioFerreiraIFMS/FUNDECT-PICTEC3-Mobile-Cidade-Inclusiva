@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sistema de ocorrências</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card_report">
+    <ion-label>A posição informada foi</ion-label>
+    <div class="report_position">
+      <div class="report_icon">
+        <ion-icon name="location" slot="start"></ion-icon>
+      </div>
+      <div class="position_description">
+        <div class="position">
+          <ion-label>Latitude:</ion-label> {{ marker?.latitude }}
+        </div>
+        <div class="position">
+          <ion-label>Longitude:</ion-label>  {{ marker?.longitude}}
+        </div>
+      </div>
+    </div>
+
+    <div class="report_form">
+      <ion-item fill="outline">
+        <ion-textarea placeholder="Informe aqui o obstáculo encontrado na via"></ion-textarea>
+      </ion-item>
+      <ion-button size="large" expand="block" (click)=" enviarOcorrencia()">Enviar</ion-button>
+    </div>
+  </div>
+</ion-content>

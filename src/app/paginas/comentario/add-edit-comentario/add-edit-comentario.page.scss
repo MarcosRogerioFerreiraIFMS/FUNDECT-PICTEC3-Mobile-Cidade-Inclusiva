@@ -1,0 +1,25 @@
+.content_main {
+  .stars {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 42px;
+    ion-label {
+      font-size: 32px;
+    }
+  }
+  .comentario {
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 200;
+    ion-textarea {
+      padding: 10px;
+      border: 1px solid;
+      border-radius: 5px;
+      --highlight-color-focused: false;
+    }
+
+    ion-button {
+      --background: #28A555;
+    }
+  }
+}

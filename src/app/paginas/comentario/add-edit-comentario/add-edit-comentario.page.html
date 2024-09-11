@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <div class="stars">
+      <ion-label>Avaliação</ion-label>
+      <app-rating [value]="0"></app-rating>
+    </div>
+    <div class="comentario">
+      <ion-textarea placeholder="Insira seu comentário..."></ion-textarea>
+      <ion-button expand="block" (click)="comentar()">Publicar</ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>

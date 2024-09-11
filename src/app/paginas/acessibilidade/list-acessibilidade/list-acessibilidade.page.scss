@@ -1,0 +1,65 @@
+ion-item {
+  --padding-start: 0;
+}
+
+ion-thumbnail {
+  --size: 80px;
+  --border-radius: 5px 0 0 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+.item_list {
+
+  .card_content {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-content: space-between;
+  }
+}
+
+.card_content_image {
+  width: 100px;
+  height: 100%;
+  position: relative;
+
+  //object-fit: cover;
+  //object-position: bottom;
+
+  img {
+    width: 100%;
+    //max-width: 100px;
+    //max-height: 75px;
+    //width: 25%;
+    //height: auto;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    //flex-grow: 1;
+  }
+}
+
+.card_content_description{
+  font-size: 12px;
+  font-weight: 500;
+  color: #222428;
+  //margin-left: 10px;
+
+  .titulo {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    ion-icon {
+      font-size: 14px;
+      padding-right: 5px;
+    }
+    padding-top: 4px;
+  }
+}

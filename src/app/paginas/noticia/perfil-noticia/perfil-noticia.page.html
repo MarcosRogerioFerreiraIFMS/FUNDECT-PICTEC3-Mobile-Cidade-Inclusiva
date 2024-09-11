@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Lista de Notícias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content_main">
+    <ion-label>{{noticia.titulo}}</ion-label>
+    <div class="card-perfil">
+      <img src='/assets/noticia/{{noticia.foto}}'>
+      <div class="description">
+        <ion-icon slot="start" name="newspaper"></ion-icon>
+        {{noticia.tipoNoticia}}
+        <ion-icon slot="start" name="calendar-number" class="data"></ion-icon>
+        {{noticia.data}}
+      </div>
+      <ion-label>Saiba mais...</ion-label>
+      <div class="description">
+        <ion-icon slot="start" name="earth-sharp"></ion-icon>
+        {{noticia.url}}
+      </div>
+      <ion-label>Conteúdo</ion-label>
+      <div class="description">
+        {{noticia.conteudo}}
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-menu-tabs></app-menu-tabs>
+</ion-footer>

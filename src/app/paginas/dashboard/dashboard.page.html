@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="page-bg-light"></div>
+  <div class="page-bg-green"></div>
+
+  <div class="main_content_div">
+    <!-- Button de acesso ao menu -->
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Dados do usuário logado -->
+    <div class="user_div">
+      <div class="first_div">
+        <ion-label class="welcome">Bem Vindo</ion-label>
+        <ion-label class="username">João Pedro Alves</ion-label>
+      </div>
+      <div class="user_back" [style.backgroundImage]="'url(/assets/dashboard/user.png)'"></div>
+    </div>
+
+    <!-- Botões de acesso -->
+    <div class="content_div">
+      <!--<ion-label class="hello_lbl">
+        Olá, escolha abaixo a funcionalidade desejada.
+      </ion-label>-->
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6"
+                  (click)="navegacao(item.rotas)"
+                  *ngFor="let item of imgGrid">
+            <div class="col_div">
+              <img src={{item.img}}>
+              <ion-label>{{item.name}}</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<!--
+
+Créditos dos ícones:
+
+Manutenção - <a href="https://www.flaticon.com/br/icones-gratis/manutencao" title="manutenção ícones">Manutenção ícones criados por Freepik - Flaticon</a>
+Notícias - <a href="https://www.flaticon.com/br/icones-gratis/jornal" title="jornal ícones">Jornal ícones criados por Freepik - Flaticon</a>
+Transporte - <a href="https://www.flaticon.com/br/icones-gratis/onibus" title="ônibus ícones">Ônibus ícones criados por FauzIDEA - Flaticon</a>
+Contatos - <a href="https://www.flaticon.com/br/icones-gratis/pessoa-de-contato" title="pessoa de contato ícones">Pessoa de contato ícones criados por Flat Icons - Flaticon</a>
+Acessibilidade - <a href="https://www.flaticon.com/br/icones-gratis/cadeira-de-rodas" title="cadeira-de-rodas ícones">Cadeira-de-rodas ícones criados por Freepik - Flaticon</a>
+Rotas - <a href="https://www.flaticon.com/br/icones-gratis/mapa" title="mapa ícones">Mapa ícones criados por Freepik - Flaticon</a>
+
+-->
