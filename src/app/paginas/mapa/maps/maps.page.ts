@@ -12,6 +12,7 @@ import { ModalPage } from '../modal/modal.page';
 export class MapsPage implements OnInit {
   @ViewChild('map')mapRef: ElementRef;
   map: GoogleMap;
+  mapsKey = 'AIzaSyBF_zsCtnAMYTnDfEj8R1gMaBwbz0u88o4';
 
   constructor(
     private nav: NavController,
@@ -34,7 +35,7 @@ export class MapsPage implements OnInit {
   async createMap(){
     this.map = await GoogleMap.create({
       id: 'my-map',
-      apiKey: environment.mapsKey,
+      apiKey: this.mapsKey,
       element: this.mapRef.nativeElement,
       config: {
         center: {
